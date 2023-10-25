@@ -1,13 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import EthImage from "../images/ethereum.svg";
 import { Link } from "react-router-dom";
 import AuthorImage from "../images/author_thumbnail.jpg";
 import nftImage from "../images/nftImage.jpg";
+import axios from "axios";
 
-const ItemDetails = () => {
+const ItemDetails = ({id}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [items, setItems] = useState([])
+
+  async function fetchItems() {
+    const { data } = await axios.get(`https://nft-marketplacee.web.app/item-details/${id}`)
+    setItems(data)
+    console.log(data)
+  }
 
   return (
     <div id="wrapper">
