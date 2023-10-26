@@ -16,6 +16,7 @@ const NewItems = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState();
 
+
   async function getNew() {
     const { data } = await axios.get(
       `https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems`
@@ -130,7 +131,7 @@ const NewItems = () => {
                     </div>
 
                     <div className="nft__item_wrap">
-                      <Skeleton width={500} height={260} borderRadius={8} />
+                      <Skeleton width={270} height={260} borderRadius={8} />
                     </div>
                     <div className="nft__item_info">
                       <h4>
