@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Countdown from "../UI/Countdown";
+import NftCard from "../UI/NftCard";
 
 AOS.init();
 
