@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Countdown from "./Countdown";
+import AuthorItems from "../author/AuthorItems";
 
-const NftCard = ({ data}) => {
+const NftCard = ({ data, authorId, authorImage }) => {
   return (
     <div
       key={data}
@@ -17,11 +18,11 @@ const NftCard = ({ data}) => {
       <div className="nft__item">
         <div className="author_list_pp">
           <Link
-            to={`/author/${data.authorId}`}
+            to={`/author/${data.authorId || authorId}`}
             data-bs-toggle="tooltip"
             data-bs-placement="top"
           >
-            <img className="lazy" src={data.authorImage} alt="" />
+            <img className="lazy" src={data.authorImage || authorImage} alt="" />
             <i className="fa fa-check"></i>
           </Link>
         </div>
